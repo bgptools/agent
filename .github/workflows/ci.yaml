@@ -36,7 +36,6 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: bgptools/agent:latest,bgptools/agent:${{ steps.shacalc.outputs.sha8 }}
-          target: agent
 
       - name: Image digest (agent)
         run: echo ${{ steps.docker_build_agent.outputs.digest }}
