@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  bgp_tools_agent:
+    image: ghcr.io/bgptools/agent:master
+    environment:
+      - BGPTOOLS_AUTH=${BGPTOOLS_AUTH}
+    network_mode: host
