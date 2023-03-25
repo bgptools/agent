@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: bgptools-agent 
+spec:
+  serviceName: "bgptools-agent"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bgptools-agent
+  template:
+    metadata:
+      labels:
+        app: bgptools-agent
+    spec:
+      containers:
+        - name: bgptools-agent
+          image: ghcr.io/bgptools/agent:master
+          env:
+            - name: BGPTOOLS_AUTH
+              value: "xxxx"
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "250m"
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
