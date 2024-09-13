@@ -6,5 +6,5 @@ RUN apt-get update
 RUN apt-get install -y gnupg mtr-tiny ca-certificates curl 
 RUN curl https://pkg.bgp.tools/repo.key | apt-key add - 
 RUN apt-get update 
-RUN apt-get install -y bgptools-agent=1705355674
+RUN apt-get install -y bgptools-agent=1725830375
 ENTRYPOINT ["/usr/bin/bgp-tools-client-agent","-background"]
